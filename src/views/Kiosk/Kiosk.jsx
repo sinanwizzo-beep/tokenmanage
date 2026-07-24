@@ -56,7 +56,7 @@ const Kiosk = () => {
           <span>Exit Kiosk</span>
         </button>
         <div className="text-xl font-bold tracking-[0.2em] text-zinc-800 uppercase flex items-center gap-4">
-          <span>Elysium <span className="text-amber-600 font-light">Estates</span></span>
+          <span>AVISON <span className="text-amber-600 font-light">YOUNG</span></span>
           <div className="h-4 w-px bg-zinc-300"></div>
           <span className="text-[10px] text-zinc-400 font-semibold tracking-widest">{waitingCount} Waiting</span>
         </div>

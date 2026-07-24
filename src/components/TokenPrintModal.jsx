@@ -47,8 +47,8 @@ const TokenPrintModal = ({ token, onClose }) => {
         {/* Receipt (slides down) */}
         <div className={`bg-white shadow-2xl w-[320px] overflow-hidden -mt-2 z-10 transition-all duration-1000 origin-top rounded-b-xl border-x border-b border-zinc-300 ${isPrinting ? 'h-0 opacity-0' : 'h-[500px] opacity-100'}`}>
           <div className="bg-zinc-50 p-5 text-center border-b border-zinc-200">
-            <div className="text-zinc-800 font-bold tracking-[0.2em] text-xs uppercase">
-              Elysium <span className="text-amber-600 font-light">Estates</span>
+            <div className="font-bold tracking-[0.25em] text-[11px] uppercase bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-900 bg-clip-text text-transparent">
+              AVISON <span className="text-amber-600 font-light bg-none ml-1">YOUNG</span>
             </div>
           </div>
 

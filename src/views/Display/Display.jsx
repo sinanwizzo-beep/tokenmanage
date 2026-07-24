@@ -6,12 +6,12 @@ import { useNavigate } from 'react-router-dom';
 const playChime = () => {
   try {
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    
+
     // High note (G5)
     const osc1 = audioCtx.createOscillator();
     const gain1 = audioCtx.createGain();
     osc1.type = 'sine';
-    osc1.frequency.setValueAtTime(783.99, audioCtx.currentTime); 
+    osc1.frequency.setValueAtTime(783.99, audioCtx.currentTime);
     gain1.gain.setValueAtTime(0, audioCtx.currentTime);
     gain1.gain.linearRampToValueAtTime(0.4, audioCtx.currentTime + 0.05);
     gain1.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 1.2);
@@ -24,7 +24,7 @@ const playChime = () => {
     const osc2 = audioCtx.createOscillator();
     const gain2 = audioCtx.createGain();
     osc2.type = 'sine';
-    osc2.frequency.setValueAtTime(523.25, audioCtx.currentTime + 0.25); 
+    osc2.frequency.setValueAtTime(523.25, audioCtx.currentTime + 0.25);
     gain2.gain.setValueAtTime(0, audioCtx.currentTime + 0.25);
     gain2.gain.linearRampToValueAtTime(0.4, audioCtx.currentTime + 0.3);
     gain2.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 2.0);
@@ -55,7 +55,7 @@ const Display = () => {
     counters.forEach(counter => {
       const wasCalled = previousCalledState.current[counter.id];
       const isCalled = counter.status === 'Called';
-      
+
       if (isCalled && !wasCalled) {
         if (!played) {
           playChime();
@@ -72,7 +72,7 @@ const Display = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans flex flex-col overflow-hidden relative selection:bg-amber-500/30">
-      
+
       {/* Premium Ambient Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[30%] -left-[10%] w-[70%] h-[70%] bg-amber-600/10 rounded-full mix-blend-screen filter blur-[120px] opacity-50 animate-pulse-slow"></div>
@@ -80,8 +80,8 @@ const Display = () => {
         <div className="absolute top-[20%] left-[40%] w-[40%] h-[40%] bg-emerald-600/5 rounded-full mix-blend-screen filter blur-[100px] opacity-40"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
       </div>
-      
-      <button 
+
+      <button
         onClick={() => navigate('/')}
         className="absolute top-8 left-8 flex items-center gap-2 text-zinc-500 hover:text-amber-400 transition-colors uppercase tracking-widest text-[10px] font-bold px-4 py-2 z-50 animate-fade-in group"
       >
@@ -93,12 +93,12 @@ const Display = () => {
       <header className="p-8 px-16 flex items-center justify-between z-10 border-b border-white/5 bg-black/40 backdrop-blur-2xl">
         <div className="flex items-center gap-6 pl-24">
           <div className="relative">
-             <div className="absolute inset-0 bg-amber-500 blur-xl opacity-20"></div>
-             <MonitorPlay size={44} className="text-amber-400 relative z-10" strokeWidth={1.5} />
+            <div className="absolute inset-0 bg-amber-500 blur-xl opacity-20"></div>
+            <MonitorPlay size={44} className="text-amber-400 relative z-10" strokeWidth={1.5} />
           </div>
           <div>
-            <h1 className="text-2xl font-bold tracking-[0.25em] uppercase text-white drop-shadow-md">
-              Elysium <span className="text-amber-400 font-light">Estates</span>
+            <h1 className="text-2xl font-bold tracking-[0.25em] uppercase text-zinc-800 drop-shadow-sm">
+              AVISON <span className="text-amber-600 font-light">YOUNG</span>
             </h1>
             <p className="text-zinc-400 text-[10px] tracking-[0.2em] uppercase mt-1.5 flex items-center gap-2">
               <Sparkles size={12} className="text-amber-500/70" /> Please wait for your token to be called
@@ -117,7 +117,7 @@ const Display = () => {
 
       {/* Main Content */}
       <main className="flex-1 flex p-10 xl:p-14 gap-10 xl:gap-14 z-10">
-        
+
         {/* Active Counters (Left 2/3) */}
         <div className="flex-[2] flex flex-col gap-6">
           <h2 className="text-[11px] font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-2 pl-2">Currently Serving</h2>
@@ -125,10 +125,10 @@ const Display = () => {
             {counters.map(counter => {
               const isActive = counter.currentToken && (counter.status === 'Called' || counter.status === 'Serving');
               const isJustCalled = counter.status === 'Called';
-              
+
               return (
                 <div key={counter.id} className={`flex-1 rounded-[2rem] border flex items-center justify-between p-10 xl:p-12 transition-all duration-700 relative overflow-hidden group ${isActive ? (isJustCalled ? 'bg-amber-500/10 border-amber-500/30 shadow-[0_0_80px_rgba(245,158,11,0.15)] scale-[1.02]' : 'bg-white/5 border-white/10 backdrop-blur-xl shadow-2xl') : 'bg-white/[0.02] border-white/5 opacity-60 backdrop-blur-sm'}`}>
-                  
+
                   {isActive && isJustCalled && <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-transparent opacity-50 animate-pulse"></div>}
 
                   <div className="relative z-10">
@@ -164,19 +164,19 @@ const Display = () => {
 
         {/* Up Next (Right 1/3) */}
         <div className="flex-[1] bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-8 xl:p-10 flex flex-col shadow-2xl relative overflow-hidden">
-          
+
           <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full filter blur-[80px]"></div>
 
           <div className="flex items-center justify-between mb-10 relative z-10">
-             <h2 className="text-[11px] font-semibold uppercase tracking-[0.3em] text-zinc-400">
+            <h2 className="text-[11px] font-semibold uppercase tracking-[0.3em] text-zinc-400">
               Up Next
-             </h2>
-             <div className="flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 rounded-full">
-               <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-               <span className="text-amber-400 text-[10px] font-bold tracking-widest uppercase">{queue.filter(t=>t.status === 'waiting').length} Waiting</span>
-             </div>
+            </h2>
+            <div className="flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 px-4 py-1.5 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+              <span className="text-amber-400 text-[10px] font-bold tracking-widest uppercase">{queue.filter(t => t.status === 'waiting').length} Waiting</span>
+            </div>
           </div>
-          
+
           <div className="flex-1 flex flex-col gap-4 relative z-10">
             {waitingTokens.length === 0 ? (
               <div className="flex-1 flex flex-col items-center justify-center opacity-40">
@@ -192,7 +192,7 @@ const Display = () => {
                   </div>
                   <div className="text-right">
                     <p className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 mb-1 font-semibold">Wait</p>
-                    <p className="text-zinc-300 font-mono text-base xl:text-lg">{Math.floor((new Date() - token.createdAt)/60000)}m</p>
+                    <p className="text-zinc-300 font-mono text-base xl:text-lg">{Math.floor((new Date() - token.createdAt) / 60000)}m</p>
                   </div>
                 </div>
               ))

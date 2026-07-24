@@ -102,8 +102,8 @@ const Admin = () => {
           >
             <ChevronLeft size={24} />
           </button>
-          <div className="text-lg font-bold tracking-[0.15em] text-zinc-800 uppercase">
-            Elysium <span className="text-amber-600 font-light">Estates</span>
+          <div className="text-lg font-bold tracking-[0.15em] text-zinc-800 uppercase flex items-center">
+            AVISON <span className="text-amber-600 font-light ml-1">YOUNG</span>
             <span className="ml-4 text-[10px] font-semibold text-zinc-400 tracking-widest border-l border-zinc-200 pl-4 uppercase hidden sm:inline">Admin</span>
           </div>
         </div>

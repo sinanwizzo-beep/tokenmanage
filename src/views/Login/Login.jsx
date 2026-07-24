@@ -32,8 +32,8 @@ const Login = () => {
 
       <div className="w-full max-w-md z-10 animate-slide-up">
         <div className="text-center mb-10">
-          <div className="text-2xl font-bold tracking-[0.2em] text-zinc-900 uppercase mb-4">
-            Elysium <span className="text-amber-600 font-light">Estates</span>
+          <div className="text-2xl font-bold tracking-[0.2em] uppercase text-zinc-900 drop-shadow-sm mb-6 flex justify-center w-full">
+            AVISON <span className="text-amber-600 font-light">YOUNG</span>
           </div>
           <h1 className="text-3xl font-light text-zinc-800 mb-2 tracking-tight drop-shadow-sm">Agent Portal</h1>
           <p className="text-zinc-500 font-light tracking-wide text-sm">Sign in to manage the token queue.</p>
@@ -47,7 +47,7 @@ const Login = () => {
                 <Mail className="absolute left-4 top-3.5 text-zinc-400" size={18} />
                 <input 
                   type="email" 
-                  defaultValue="agent@elysiumestates.com"
+                  defaultValue="agent@avisonyoung.com"
                   required
                   className="w-full bg-zinc-50/50 border border-zinc-200 text-zinc-900 rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all font-medium text-sm"
                 />
